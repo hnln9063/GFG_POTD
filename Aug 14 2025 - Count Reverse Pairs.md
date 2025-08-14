@@ -4,6 +4,7 @@ You are given an array arr[] of positive integers, find the count of reverse pai
 - 0 ≤ i < j < arr.size()
 - arr[i] > 2 * arr[j]
 
+
 ## Examples:
 ```
 Input: arr[] = [3, 2, 4, 5, 1, 20]
@@ -22,23 +23,6 @@ The Reverse pairs are
 (0, 3), arr[0] = 5, arr[3] = 2, 5 > 2*2
 (0, 4), arr[0] = 5, arr[4] = 2, 5 > 2*2
 ```
-
-## Approach
-
-- Sort the prices array in non-decreasing order.
-- Minimum Cost:
-  - Use two pointers: left at the start (cheapest), right at the end (costliest).
-  - While left ≤ right:
-    - Pay prices[left] (buy the cheapest available).
-    - Increment left by 1.
-    - Decrement right by k (take up to k most expensive remaining for free).
-- Maximum Cost:
-  - Reset pointers: left at start, right at end.
-  - While left ≤ right:
-    - Pay prices[right] (buy the most expensive available).
-    - Decrement right by 1.
-    - Increment left by k (take up to k cheapest remaining for free).
-- Return [minCost, maxCost].
 
 ## Java Solution
 ```java
